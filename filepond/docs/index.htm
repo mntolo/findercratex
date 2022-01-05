@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="A JavaScript library that can upload anything you throw at it, optimizes images for faster uploads, and offers a great, accessible, silky smooth user experience.">
+    
+    <title>Easy File Uploading With JavaScript | FilePond</title>
+    
+    <script>
+    try {
+        (function(w, u){
+        u = new URL(w.location)
+        if (u.pathname.endsWith('/')) return
+        u.pathname += u.pathname.endsWith('/') ? '' : '/'
+        w.history.replaceState(null, document.title, u.toString())
+        }(window))
+    }
+    catch(err){}
+    
+    
+    document.documentElement.className += ' js';
+
+    
+    assetsPath = '../static/assets/'
+    </script><!-- facebook -->
+    <meta property="og:type" content="product">
+    <meta property="og:title" content="Easy File Uploading With JavaScript | FilePond">
+    <meta property="og:url" content="https://pqina.nl/filepond/docs/">
+    <meta property="og:product_link" content="https://pqina.nl/filepond/docs/">
+    <meta property="og:image" content="https://pqina.nl/filepond/static/assets/social-square.png?1636559349">
+    <meta property="og:description" content="A JavaScript library that can upload anything you throw at it, optimizes images for faster uploads, and offers a great, accessible, silky smooth user experience.">
+    <meta property="og:locale" content="en_US">
+
+    <!-- twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@pqina_">
+    <meta name="twitter:creator" content="@rikschennink">
+    <meta name="twitter:title" content="Easy File Uploading With JavaScript | FilePond">
+    <meta name="twitter:description" content="A JavaScript library that can upload anything you throw at it, optimizes images for faster uploads, and offers a great, accessible, silky smooth user experience.">
+    <meta name="twitter:image" content="https://pqina.nl/filepond/static/assets/social-square.png?1636559349">
+    <meta name="twitter:image:alt" content="">
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- styles for site -->
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css?v=1636559349">
+    
+</head>
+    
+    <nav class="nav-back">
+    <a href="../"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="14 18 8 12 14 6"></polyline></svg> Back to Product Page</a>
+</nav>
+    
+
+    
+
+    <div class="docs">
+
+      <nav class="nav-tree">
+        <h2 class="implicit"
+            data-module="SectionToggler"
+            data-context="@media (max-width:50em)">Navigation</h2>
+
+        
+
+        <ul>
+
+
+
+
+
+
+
+<li class="tree-item-active">
+
+  <a href="../docs/">Welcome</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/donate/">Donate</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/support/">Support</a>
+
+  </li>
+
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/getting-started/">Getting Started</a>
+
+  <ul>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/getting-started/compatibility/">Compatibility</a>
+
+  </li>
+
+
+
+
+
+
+
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+    
+    
+
+
+
+<li>
+
+  <a href="../docs/getting-started/installation/">Installation<span class="tree-item-sub">[+]</span></a>
+
+  <ul style="display:none">
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/getting-started/installation/javascript/">JavaScript</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/getting-started/installation/jquery/">jQuery</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/getting-started/installation/react/">React</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/getting-started/installation/vue/">Vue</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/getting-started/installation/angular/">Angular</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/getting-started/installation/svelte/">Svelte</a>
+
+  </li></ul></li>
+
+
+
+
+
+
+
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+    
+    
+
+
+
+<li>
+
+  <a href="../docs/getting-started/examples/">Examples<span class="tree-item-sub">[+]</span></a>
+
+  <ul style="display:none">
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/getting-started/examples/async-upload/">Asyc file upload</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/getting-started/examples/replace-file-input/">Replace file input</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/getting-started/examples/show-image-preview/">Show image preview</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/getting-started/examples/validate-file-type/">Validate file type</a>
+
+  </li></ul></li></ul></li>
+
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/">API</a>
+
+  <ul>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/exports/">Exports</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/file-item/">File item</a>
+
+  </li>
+
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/instance/">Instance</a>
+
+  <ul>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/instance/properties/">Properties</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/instance/methods/">Methods</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/instance/events/">Events</a>
+
+  </li></ul></li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/style/">Style</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/server/">Server</a>
+
+  </li>
+
+
+
+
+
+
+
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+    
+    
+
+
+
+<li>
+
+  <a href="../docs/api/plugins/">Plugins<span class="tree-item-sub">[+]</span></a>
+
+  <ul style="display:none">
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/plugins/file-encode/">File encode</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/plugins/file-metadata/">File metadata</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/plugins/file-poster/">File poster</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/plugins/file-rename/">File rename</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/plugins/file-validate-size/">File size validation</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/plugins/file-validate-type/">File type validation</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/plugins/image-crop/">Image crop</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/plugins/image-edit/">Image edit</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/plugins/image-exif-orientation/">Image exif-orientation</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/plugins/image-filter/">Image filter</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/plugins/image-preview/">Image preview</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/plugins/image-resize/">Image resize</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/plugins/image-transform/">Image transform</a>
+
+  </li>
+
+
+
+
+
+
+
+<li>
+
+  <a href="../docs/api/plugins/image-validate-size/">Image validate size</a>
+
+  </li></ul></li></ul></li></ul>
+
+      </nav>
+
+      
+      <div class="docs-content">
+
+        
+        <h1>FilePond Documentation</h1>
+        
+
+        <p>Welcome to the <a href="https://pqina.nl/filepond/">FilePond</a> Docs.</p>
+<p>FilePond is a JavaScript library that brings silky smooth drag n' drop file uploading. These docs they will help install, setup, modify and extend FilePond.</p>
+<p>If you're unfamiliar with FilePond you can find more info on the <a href="https://pqina.nl/filepond/">FilePond product page</a>.</p>
+<p><a href="./getting-started/">Let’s get started</a></p>
+
+      </div>
+      
+
+    </div>
+
+    
+    <script src="../static/js/bundle-1636559349.js"></script>
+
+    <script async defer data-hostname="filepond.pqina.nl" src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    <noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript>
+
+</body>
+</html>
